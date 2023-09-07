@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    
+    <title>Water world</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main2.js"></script>
+        
+    <style>
+        #output {
+            margin-top: 20px;
+        }
+        
+        #btn1{
+            margin: -55px 855px;
+          
+         
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Welcome to water world</h1>
+    <input type="text" id="inputField" placeholder="Enter information">
+    <button id="displayButton" class="btn btn-Success">Display</button>
+    <div id="output"></div>
+    </center>
+    <input type="hidden" id="input1">
+    <button onclick="logout()" class="btn btn-danger" id="btn1">Logout</button>
+    
+    
+    
+    <script>
+        
+        const firebaseConfig = {
+        apiKey: "AIzaSyCjpSDpADTfG2Q4eyurX7ZuT9d6zjf7PqM",
+        authDomain: "multiplepage-a355f.firebaseapp.com",
+        databaseURL: "https://multiplepage-a355f-default-rtdb.firebaseio.com",
+        projectId: "multiplepage-a355f",
+        storageBucket: "multiplepage-a355f.appspot.com",
+        messagingSenderId: "945549416496",
+        appId: "1:945549416496:web:33d9c0b8f7cfae3b5e35f5",
+        measurementId: "G-9L8SEG5R5T"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const inputField = document.getElementById('inputField');
+        const displayButton = document.getElementById('displayButton');
+        const outputDiv = document.getElementById('output');
+
+        displayButton.addEventListener('click', () => {
+        const enteredText = inputField.value;
+        if (enteredText) {
+        const displayText = document.createElement('p');
+        displayText.textContent = enteredText;
+        outputDiv.appendChild(displayText);
+        inputField.value = ''; 
+        }
+        });
+        
+
+      
+    </script>
+        
+</body>
+</html>
+
+
